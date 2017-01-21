@@ -97,7 +97,7 @@ function multi(req, res){
           let aux = new Object();
           aux.time = obj.time
           aux.cpus = obj.cpus
-          aux.n = obj.product.length
+          aux.n = n[i]
           x.push(aux)
           console.log(aux)
         }
@@ -109,7 +109,7 @@ function multi(req, res){
             let aux = new Object();
             aux.time = obj.time
             aux.cpus = obj.cpus
-            aux.n = obj.product.length
+            aux.n = n[i]
             y.push(aux)
             console.log(aux)
         }
