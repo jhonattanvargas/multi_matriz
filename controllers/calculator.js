@@ -93,7 +93,7 @@ function multi(req, res){
     let n = [600,800,1000]
     for (var i = 0; i < n.length; i++) {
         for (var j = 0; j < testNumber; j++) {
-          let obj = addon.serial(generate(n[i]),generate(n[i]))
+          let obj = addon.serialProduct(generate(n[i]),generate(n[i]))
           let aux = new Object();
           aux.time = obj.time
           aux.cpus = obj.cpus
@@ -105,7 +105,7 @@ function multi(req, res){
     let y = new Array();
     for (let i = 0; i < n.length; i++) {
         for (let j = 0; j < testNumber; j++) {
-            let obj = addon.parallel(generate(n[i]),generate(n[i]))
+            let obj = addon.parallelProduct(generate(n[i]),generate(n[i]))
             let aux = new Object();
             aux.time = obj.time
             aux.cpus = obj.cpus
