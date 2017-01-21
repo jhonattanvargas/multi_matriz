@@ -115,6 +115,14 @@ function multi(req, res){
         }
     }
     var result = new Object();
+    result.medSerial1 = 0;
+    result.medSerial2 = 0;
+    result.medSerial3 = 0;
+    result.medSerial4 = 0;
+    result.medParallel1 = 0;
+    result.medParallel2 = 0;
+    result.medParallel3 = 0;
+    result.medParallel4 = 0;
     for (let i = 0; i < x.length; i++) {
         if(x[i].n==600){
             result.medSerial1 += x[i].time / testNumber
@@ -151,15 +159,17 @@ function multi(req, res){
 
     console.log(result)
 
-    result.push(x)
-    result.push(y)
+    let arraySend = Array();
+
+    arraySend.push(x)
+    arraySend.push(y)
+    arraySend.push(result)
 
     res
     .status(200)
     .send(
-        JSON.parse(JSON.stringify(result))
+        JSON.parse(JSON.stringify(arraySend))
     )
-
 }
 
 module.exports = {
